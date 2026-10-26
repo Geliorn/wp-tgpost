@@ -48,7 +48,7 @@ class WPTP_Infographic_Composer extends WPTP_Image_Composer {
 
 		$fit = self::fit_items( $preset, $font, $items, $area );
 		if ( empty( $fit['cells'] ) ) {
-			imagedestroy( $canvas );
+			self::destroy_image( $canvas );
 			return self::result( false, '', '', $fit['error'] );
 		}
 
@@ -60,7 +60,7 @@ class WPTP_Infographic_Composer extends WPTP_Image_Composer {
 		self::apply_logo( $canvas, $preset );
 
 		$saved = self::save( $canvas, $preset, $out_path );
-		imagedestroy( $canvas );
+		self::destroy_image( $canvas );
 
 		if ( ! $saved['ok'] ) {
 			return self::result( false, '', '', $saved['error'] );
@@ -138,7 +138,7 @@ class WPTP_Infographic_Composer extends WPTP_Image_Composer {
 			$source = @imagecreatefromstring( (string) file_get_contents( $background_path ) ); // phpcs:ignore
 			if ( $source ) {
 				self::draw_source( $canvas, $source, $preset );
-				imagedestroy( $source );
+				self::destroy_image( $source );
 				self::apply_filters( $canvas, $preset );
 				self::apply_tint( $canvas, $preset );
 			}

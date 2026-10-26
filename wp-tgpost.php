@@ -2,7 +2,7 @@
 /**
  * Plugin Name: WP TgPost
  * Description: Автопубликация записей в Telegram-каналы через Bot API. Один бот — сколько угодно каналов; у каждого канала свои условия отбора по таксономиям, шаблон сообщения, публикация при выходе записи и ротация старых записей без повторов, тихие часы, интервал и дневной лимит. Картинка — из записи или генерируемая инфографика (пресеты как в WP PinFeed), анонс может писать LLM. HTTP(S)/SOCKS5-прокси для Bot API. Самодостаточен — без ACF/CPT UI.
- * Version: 0.1.0
+ * Version: 0.1.1
  * Author: llm-agent.ru
  * Requires at least: 6.0
  * Requires PHP: 7.4
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-define( 'WPTP_VERSION', '0.1.0' );
+define( 'WPTP_VERSION', '0.1.1' );
 define( 'WPTP_PLUGIN_FILE', __FILE__ );
 define( 'WPTP_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'WPTP_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
